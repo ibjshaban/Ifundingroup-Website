@@ -1,4 +1,4 @@
-@extends('backend.layout.master')
+@extends('dashboard.layout.master')
 
 @section('pageTitle','Add new user')
 

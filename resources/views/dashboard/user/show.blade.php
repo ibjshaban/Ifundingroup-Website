@@ -1,4 +1,4 @@
-@extends('backend.layout.master')
+@extends('dashboard.layout.master')
 
 @section('pageTitle','Show user')
 
@@ -13,7 +13,7 @@
         <div class="col-12">
             <div class="card profile-widget">
                 <div class="profile-widget-header">
-                    <img alt="image" src="{{ is_null($user->avatar)?url('dashboard-assets'):url('storage/'.$user->avatar) }}"
+                    <img alt="image" src="{{ is_null($user->avatar)?url('dashboard-assets/img/avatar/avatar-1.png'):url('storage/'.$user->avatar) }}"
                         class="rounded-circle profile-widget-picture">
                     <div class="profile-widget-items">
                         <div class="profile-widget-item">

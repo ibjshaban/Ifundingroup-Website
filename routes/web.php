@@ -27,4 +27,12 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     Route::get('/dashboard', 'Dashboard\DashboardController@index')->name('dashboard');
 
+    Route::resource('/user', 'Dashboard\UserController');
+
+    Route::group(['middleware' => ['checkRole']], function () {
+        Route::get('admin/user')->name('user.index');
+        Route::get('admin/user/create')->name('user.create');
+        Route::get('admin/user')->name('user.store');
+    });
+
 });

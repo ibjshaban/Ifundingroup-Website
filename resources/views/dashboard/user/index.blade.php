@@ -1,4 +1,8 @@
-@extends('backend.layout.master')
+@extends('dashboard.layout.master')
+
+@section('username')
+    {{ $user->name }}
+@endsection
 
 @section('content')
 
