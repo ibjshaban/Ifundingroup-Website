@@ -22,7 +22,12 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>App Settings</span></a>
         <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{{ route('home') }}">Home</a></li>
           <li><a class="nav-link" href="{{ route('user.index') }}">Users</a></li>
+          <li><a class="nav-link" href="{{ route('homepage') }}">Home page</a></li>
+          <li><a class="nav-link" href="{{ route('contactus.view') }}">Contact us</a></li>
+          <li><a class="nav-link" href="{{ route('applynow.view') }}">Apply now</a></li>
+          <li><a class="nav-link" href="{{ route('careers.index') }}">Careers</a></li>
           {{--<li><a class="nav-link" href="{{ route('category.index') }}">Categories</a></li>
           <li><a class="nav-link"href="{{ route('tag.index') }}">Tags</a></li>--}}
           <li><a class="nav-link" href="#">Settings</a></li>

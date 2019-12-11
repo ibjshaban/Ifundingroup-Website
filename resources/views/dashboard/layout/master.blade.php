@@ -6,16 +6,26 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>@yield('pageTitle','') &mdash; {{ config('app.name') }}</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- General CSS Files -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="../node_modules/jqvmap/dist/jqvmap.min.css">
-    <link rel="stylesheet" href="../node_modules/summernote/dist/summernote-bs4.css">
-    <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
+{{-- <link rel="stylesheet" href="../node_modules/jqvmap/dist/jqvmap.min.css">
+ <link rel="stylesheet" href="../node_modules/summernote/dist/summernote-bs4.css">
+ <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
+ <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">--}}
+
+
+<!-- General CSS Files -->
+    <link rel="stylesheet" href="{{ asset('dashboard-assets/modules/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dashboard-assets/modules/fontawesome/css/all.min.css') }}">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="{{ asset('dashboard-assets/modules/bootstrap-social/bootstrap-social.css') }}">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('dashboard-assets/css/style.css') }}">
@@ -171,7 +181,8 @@
                 </li>
                 <li class="dropdown"><a href="#" data-toggle="dropdown"
                                         class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                        <img alt="image" src="{{ asset('dashboard-assets/img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
+                        <img alt="image" src="{{ asset('dashboard-assets/img/avatar/avatar-1.png') }}"
+                             class="rounded-circle mr-1">
                         <div class="d-sm-none d-lg-inline-block">Hi, @yield('username')</div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -179,9 +190,9 @@
                         <a href="{{ route('user.show', $user->id) }}" class="dropdown-item has-icon">
                             <i class="far fa-user"></i> Profile
                         </a>
-                       {{-- <a href="features-activities.html" class="dropdown-item has-icon">
-                            <i class="fas fa-bolt"></i> Activities
-                        </a>--}}
+                        {{-- <a href="features-activities.html" class="dropdown-item has-icon">
+                             <i class="fas fa-bolt"></i> Activities
+                         </a>--}}
                         <a href="{{ route('user.update', $user->id) }}" class="dropdown-item has-icon">
                             <i class="fas fa-cog"></i> Settings
                         </a>
@@ -194,7 +205,7 @@
             </ul>
         </nav>
     @if($user->role=='admin')
-    @include('dashboard.layout.sidebar')
+        @include('dashboard.layout.sidebar')
     @endif
 
     <!-- Main Content -->
@@ -209,18 +220,18 @@
                         </ul>
                     </div>
                 @endif
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success alert-block">
-                            <strong>{{ $message }}</strong>
-                        </div>
-                    @endif
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
 
 
-                    @if ($message = Session::get('error'))
-                        <div class="alert alert-danger alert-block">
-                            <strong>{{ $message }}</strong>
-                        </div>
-                    @endif
+                @if ($message = Session::get('error'))
+                    <div class="alert alert-danger alert-block">
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
                 @yield('content')
             </section>
         </div>
@@ -251,21 +262,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 {{--  <script src="{{mix('js/app.js') }}"></script>--}}
 
-<script src="{{ asset('dashboard-assets/js/stisla.js') }}"></script>
 
 <!-- JS Libraies -->
-<script src="../node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
-<script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-<script src="../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-<script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
-<script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+{{--<script src="../node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>--}}
+{{--<script src="../node_modules/chart.js/dist/Chart.min.js"></script>--}}
+{{--<script src="../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>--}}
+{{--<script src="../node_modules/summernote/dist/summernote-bs4.js"></script>--}}
+{{--<script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>--}}
+
+
+
 
 <!-- Template JS File -->
 <script src="{{ asset('dashboard-assets/js/scripts.js') }}"></script>
 <script src="{{ asset('dashboard-assets/js/custom.js') }}"></script>
 
 <!-- Page Specific JS File -->
-<script src="{{ asset('dashboard-assets/js/page/index.js') }}"></script>
+{{--<script src="{{ asset('dashboard-assets/js/page/index.js') }}"></script>--}}
+
+
 
 @yield('footerJs')
 </body>

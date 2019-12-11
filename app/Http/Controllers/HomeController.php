@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\HomePage;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +27,19 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('frontend.index',compact('user'));
+
+        $pages = HomePage::all();
+
+        $first = HomePage::first();
+//        dd($first);
+//        dd($pages);
+        return view('frontend.index',compact('user', 'pages','first'));
     }
+
+    public function investMoney(){
+        $user = Auth::user();
+
+        return view('frontend.invest-money', compact('user'));
+    }
+
 }

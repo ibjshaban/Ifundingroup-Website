@@ -1,9 +1,10 @@
 <html lang="en">
 <head>
-    <title>Investment- you are more than in your wallet</title>
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    @yield('link')
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 </head>
 <!--custom link-->
@@ -11,7 +12,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light position-absolute w-100 mt-sm-5 mt-5">
     <div class="container mt-sm-1 mt-4" id="nav-con">
-        <a class="navbar-brand" href="#"><img class="logo" src="{{ asset('frontend-assets/images/logo.jpg') }}"></a>
+        <a class="navbar-brand" href="{{ route('home') }}"><img class="logo" src="{{ asset('frontend-assets/images/logo.jpg') }}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
                 style="border-color:white">
@@ -22,30 +23,30 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#!">Home
+                    <a class="nav-link" href="{{ route('home') }}">Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="subpages/invest_your_money.html">Invest your money</a>
+                    <a class="nav-link" href="{{ route('investMoney') }}">Invest your money</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="subpages/business_loan.html">Get a business loan</a>
+                    <a class="nav-link" href="{{ route('businessloan') }}">Get a business loan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="subpages/about_us.html">About us</a>
+                    <a class="nav-link" href="{{ route('aboutus') }}">About us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="subpages/contact_us.html">Contact us</a>
+                    <a class="nav-link" href="{{ route('contactus') }}">Contact us</a>
                 </li>
                 <li class="nav-item d-block d-sm-none">
-                    <a class="nav-link" href="subpages/contact_us.html">How it works</a>
+                    <a class="nav-link" href="{{ route('howToWork.index') }}">How it works</a>
                 </li>
                 <li class="nav-item d-block d-sm-none">
-                    <a class="nav-link" href="subpages/contact_us.html">Lenders</a>
+                    <a class="nav-link" href="{{ route('lenders.lenders') }}">Lenders</a>
                 </li>
                 <li class="nav-item d-block d-sm-none">
-                    <a class="nav-link" href="subpages/contact_us.html">Borrowers</a>
+                    <a class="nav-link" href="{{ route('borrowers.whyBorrow') }}">Borrowers</a>
                 </li>
                 <li class="nav-item d-none d-lg-block">
                     <div class="dropdown mt-2">
@@ -55,9 +56,9 @@
                         </a>
 
                         <div class="dropdown-menu bg-dark text-white" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">How it works</a>
-                            <a class="dropdown-item" href="#">Lenders</a>
-                            <a class="dropdown-item" href="#">Borrowers</a>
+                            <a class="dropdown-item" href="{{ route('howToWork.index') }}">How it works</a>
+                            <a class="dropdown-item" href="{{ route('lenders.lenders') }}">Lenders</a>
+                            <a class="dropdown-item" href="{{ route('borrowers.whyBorrow') }}">Borrowers</a>
                         </div>
                     </div>
                 </li>
@@ -84,6 +85,10 @@
     </div>
 </div>
 <!-- Full Page Image Header with Vertically Centered Content -->
+@yield('header')
+
+@yield('alertMessage')
+
 
 @yield('content')
 
@@ -122,13 +127,22 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="subpages/about_us.html">About us</a>
+                        <a href="{{ route('aboutus') }}">About us</a>
                     </li>
                     <li>
-                        <a href="subpages/business_loan.html">Get business loan</a>
+                        <a href="{{ route('businessloan') }}">Get business loan</a>
                     </li>
                     <li>
-                        <a href="subpages/careers.html">Careers</a>
+                        <a href="{{ route('careers.index') }}">Careers</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('howToWork.index') }}">How its work</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('lenders.lenders') }}">Lenders</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('borrowers.whyBorrow') }}">Borrowers</a>
                     </li>
 
             </div>
@@ -145,13 +159,13 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="subpages/faq.html">FAQ</a>
+                        <a href="{{ route('faq') }}">FAQ</a>
                     </li>
                     <li>
-                        <a href="subpages/contact_us.html">Contact Us</a>
+                        <a href="{{ route('contactus') }}">Contact Us</a>
                     </li>
                     <li>
-                        <a href="subpages/invest_your_money.html">Investor</a>
+                        <a href="{{ route('investMoney') }}">Investor</a>
                     </li>
                 </ul>
 
@@ -172,7 +186,7 @@
             <h5 class="mb-1">Register for free</h5>
         </li>
         <li class="list-inline-item">
-            <a href="subpage/sign_up.html" class="btn master-bg text-white btn-rounded">Sign up!</a>
+            <a href="{{ route('register') }}" class="btn master-bg text-white btn-rounded">Sign up!</a>
         </li>
     </ul>
     <!-- Call to action -->
@@ -210,9 +224,9 @@
     <!-- Social buttons -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="#!"> Ifundingroup.net</a> | Design & developed by :
-        <a href="https://www.freelancer.com/u/DeveloperAlok?w=f"> Alok</a>
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="{{ route('home') }}"> Ifundingroup.net</a> | Design & developed by :
+        <a href="#"> Alok</a>
     </div>
     <!-- Copyright -->
 

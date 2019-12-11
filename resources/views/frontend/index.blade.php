@@ -1,5 +1,7 @@
 @extends('frontend.layout.master')
 
+@section('title','Investment- you are more than in your wallet')
+
 @section('content')
 
 
@@ -7,6 +9,10 @@
     @if(!$user)
         <li class="nav-item mt-2 ml-5">
             <a class="btn btn-secondary" href="{{ route('login') }}">Login</a>
+        </li>
+    @else
+        <li class="nav-item mt-2 ml-5">
+            <a class="btn btn-secondary" href="{{ route('user.show',$user->id) }}">Profile</a>
         </li>
     @endif
 @endsection
@@ -22,14 +28,14 @@
 
                 <div class="row align-items-center mt-5">
                     <div class="col-sm-5 text-sm-right text-center">
-                        <button class="btn btn-xl master-bg"><a href="subpages/business_loan.html" class="text-white"
+                        <button class="btn btn-xl master-bg"><a href="{{ route('businessloan') }}" class="text-white"
                                                                 style="font-size: 20px">know more</a></button>
                     </div>
                     <div class="col-sm-1 text-center">
                         <span class="text-white"> OR </span>
                     </div>
                     <div class="col-sm-5 text-sm-left text-center pl-sm-5 pl-3">
-                        <button class="btn btn-xl master-bg"><a href="subpages/apply_now.html" class="text-white"
+                        <button class="btn btn-xl master-bg"><a href="{{ route('applynow') }}" class="text-white"
                                                                 style="font-size: 20px">Apply now</a></button>
                     </div>
 
@@ -77,7 +83,7 @@
                 </h2>
                 <div class="row align-items-center mt-5">
                     <div class="col-sm-5 text-sm-right text-center">
-                        <button class="btn btn-xl master-bg px-5 font-weight-bold"><a href="subpages/apply_now.html"
+                        <button class="btn btn-xl master-bg px-5 font-weight-bold"><a href="subpages/{{ route('applynow') }}"
                                                                                       class="text-white"
                                                                                       style="font-size: 25px">Get
                                 started</a></button>
@@ -86,7 +92,7 @@
                         <h5 class="font-weight-light"> OR </h5>
                     </div>
                     <div class="col-sm-5 text-sm-left text-center pl-sm-5">
-                        <button class="btn btn-xl master-bg px-5 font-weight-bold"><a href="subpages/business_loan.html"
+                        <button class="btn btn-xl master-bg px-5 font-weight-bold"><a href="subpages/{{ route('businessloan') }}"
                                                                                       class="text-white"
                                                                                       style="font-size: 25px">Learn
                                 more</a></button>
@@ -112,41 +118,40 @@
                     </ol>
                     <!-- Wrapper for carousel items -->
                     <div class="carousel-inner">
-                        <div class="item carousel-item active">
+                        @foreach($pages as $page)
+                        <div class="item carousel-item {{ $page->id==$first->id?'active':'' }}">
                             <div class="row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-6 mx-auto">
                                     <div class="testimonial">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor,
-                                            varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel,
-                                            semper malesuada ante.</p>
+                                        <p>{{ $page->test_graph }}</p>
                                     </div>
-                                    <div class="media">
-                                        <div class="media-left d-flex mr-3">
-                                            <img src="https://www.tutorialrepublic.com/examples/images/clients/1.jpg"
-                                                 alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="overview">
-                                                <div class="name"><b>Paula Wilson</b></div>
-                                                <div class="details">Media Analyst / SkyNet</div>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
+                                        <div class="media">
+                                            <div class="media-left d-flex mr-3">
+                                                <img
+                                                    src="https://www.tutorialrepublic.com/examples/images/clients/1.jpg"
+                                                    alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="overview">
+                                                    <div class="name"><b>{{ $page->test_name }}</b></div>
+                                                    <div class="details">{{ $page->test_job }}</div>
+                                                    <div class="star-rating">
+                                                        <ul class="list-inline">
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
-                                <div class="col-sm-6">
+                               {{-- <div class="col-sm-6">
                                     <div class="testimonial">
-                                        <p>Vestibulum quis quam ut magna consequat faucibu. Eget mi suscipit tincidunt.
-                                            Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat
-                                            faucibus quam.</p>
+                                        <p>{{ $page->test_graph }}</p>
                                     </div>
                                     <div class="media">
                                         <div class="media-left d-flex mr-3">
@@ -155,8 +160,8 @@
                                         </div>
                                         <div class="media-body">
                                             <div class="overview">
-                                                <div class="name"><b>Antonio Moreno</b></div>
-                                                <div class="details">Web Developer / SoftBee</div>
+                                                <div class="name"><b>{{ $page->test_name }}</b></div>
+                                                <div class="details">{{ $page->test_job }}</div>
                                                 <div class="star-rating">
                                                     <ul class="list-inline">
                                                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -169,10 +174,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--}}
                             </div>
                         </div>
-                        <div class="item carousel-item">
+                        @endforeach
+
+                        {{--<div class="item carousel-item">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="testimonial">
@@ -291,7 +298,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
                     <!-- Carousel controls -->
                     <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
@@ -385,7 +392,7 @@
 
             </div>
             <div class="col-sm-6 text-center my-auto">
-                <button class="btn btn-xl border"><a href="subpages/contact_us.html" class="text-white"
+                <button class="btn btn-xl border"><a href="subpages/{{ route('contactus') }}" class="text-white"
                                                      style="font-size: 20px">Request A Quit</a></button>
             </div>
         </div>
@@ -398,7 +405,7 @@
                 <h4 class="font-weight-light">We only do business lending, and have tailored our award-winning service
                     to give you the best experience possible.<br><br>
                 </h4>
-                <button class="btn btn-xl border my-4 mb-5"><a href="subpages/business_loan.html" class="text-white"
+                <button class="btn btn-xl border my-4 mb-5"><a href="subpages/{{ route('businessloan') }}" class="text-white"
                                                                style="font-size: 20px">Learn more about business
                         loan</a></button>
                 <div class="row">

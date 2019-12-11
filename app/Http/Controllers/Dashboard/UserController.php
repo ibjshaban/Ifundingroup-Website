@@ -32,7 +32,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('dashboard.user.create');
+        $user = Auth::user();
+        return view('dashboard.user.create', compact('user'));
     }
 
     /**
@@ -116,6 +117,25 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->bio = $request->input('bio');
         $user->mobile = $request->input('mobile');
+
+        $user->mobile = $request->input('first_name');
+        $user->mobile = $request->input('last_name');
+        $user->mobile = $request->input('home_address');
+        $user->mobile = $request->input('apartment');
+        $user->mobile = $request->input('city');
+        $user->mobile = $request->input('stat');
+        $user->mobile = $request->input('zip_code');
+        $user->mobile = $request->input('phone');
+        $user->mobile = $request->input('dob');
+        $user->mobile = $request->input('home_ownership');
+        $user->mobile = $request->input('check_graduation');
+        $user->mobile = $request->input('school_name');
+        $user->mobile = $request->input('undergraduate');
+        $user->mobile = $request->input('graduation_date');
+        $user->mobile = $request->input('emp_status');
+        $user->mobile = $request->input('emp_name');
+        $user->mobile = $request->input('income_total');
+        $user->mobile = $request->input('exp_total');
         // check if the avatar is uploded, then add it to the update fucntion
         if (!is_null($avatar)) {
             $user->avatar = $avatar;
@@ -124,12 +144,8 @@ class UserController extends Controller
         if (!is_null($request->password)) {
             $user->password = bcrypt($request->input('password'));
         }
-        if ($user->role=='admin') {
             $user->save();
             return back()->with('success', 'user details has been updated');
-        }else{
-            return back()->with('error', 'user details can not updated');
-        }
     }
 
     /**

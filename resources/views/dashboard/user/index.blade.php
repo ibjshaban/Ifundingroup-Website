@@ -44,14 +44,14 @@
                 </td>
                 <td>
                   <div class="buttons">
-                    <a href="{{ route('user.show',$user->id)}}" class="btn btn-icon btn-secondary">
-                      <i class="far fa-user"></i>
-                    </a>
-                    <a href="{{ route('user.edit',$user->id) }}" class="btn btn-icon btn-primary">
-                      <i class="far fa-edit"></i>
-                    </a>
                     <form action="{{ route('user.destroy',$user->id) }}" method="post">
-                      @csrf
+                        <a href="{{ route('user.show',$user->id)}}" class="btn btn-icon btn-secondary">
+                            <i class="far fa-user"></i>
+                        </a>
+                        <a href="{{ route('user.edit',$user->id) }}" class="btn btn-icon btn-primary">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        @csrf
                       @method('delete')
                       <button type="submit" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></button>
                     </form>
