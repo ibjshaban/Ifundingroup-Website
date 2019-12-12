@@ -17,7 +17,7 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index');
-Route::get('/invest_your_money', 'HomeController@investMoney')->name('investMoney');
+Route::get('/invest-your-money', 'HomeController@investMoney')->name('investMoney');
 Route::get('/logout', 'Auth\LoginController@logout');
 
 /*front end pages*/
@@ -27,8 +27,8 @@ Route::get('/faq', 'FAQController@index')->name('faq');
 
 /*How to work*/
 Route::get('/how-its-work', 'HowToWorkController@index')->name('howToWork.index');
-Route::get('/what-does-funding-not-do.blade', 'HowToWorkController@notDow')->name('howToWork.notDow');
-Route::get('/the-bidding-process.blade', 'HowToWorkController@bidProcess')->name('howToWork.bidProcess');
+Route::get('/what-does-funding-not-do', 'HowToWorkController@notDow')->name('howToWork.notDow');
+Route::get('/the-bidding-process', 'HowToWorkController@bidProcess')->name('howToWork.bidProcess');
 Route::get('/transfer-of-funds-and-emi-payments', 'HowToWorkController@transFunds')->name('howToWork.transFunds');
 Route::get('/cancellation-and-refund-policy', 'HowToWorkController@refund')->name('howToWork.refund');
 
@@ -53,7 +53,7 @@ Route::get('/interest-rates-and-fees', 'HowToWorkController@insertFees')->name('
 
 Auth::routes();
 
-
+Route::get('/contact-us', 'Dashboard\ContactUsController@index')->name('contactus');
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
     Route::get('/', 'Dashboard\DashboardController@index')->name('dashboard');
@@ -73,17 +73,17 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
             Route::delete('/homepage/{id}', 'Dashboard\PageController@destroy')->name('homepage.destroy');
 
             /*Contact us page*/
-            Route::get('/contact-us', 'Dashboard\ContactUsController@index')->name('contactus');
+
             Route::post('/contact-us/store', 'Dashboard\ContactUsController@store')->name('contactus.store');
             Route::get('/contact-us/test', 'Dashboard\ContactUsController@view')->name('contactus.view');
             Route::delete('/contact-us/delete/{id}', 'Dashboard\ContactUsController@destroy')->name('contactus.destroy');
 
 
             /*Apply now page*/
-            Route::get('/apply-now', 'Dashboard\ApplyNowController@index')->name('applynow');
-            Route::post('/apply-now/store', 'Dashboard\ApplyNowController@store')->name('applynow.store');
-            Route::get('/apply-now/test', 'Dashboard\ApplyNowController@view')->name('applynow.view');
-            Route::delete('/apply-now/delete/{id}', 'Dashboard\ApplyNowController@destroy')->name('applynow.destroy');
+            Route::get('/apply-now', 'Dashboard\applynowController@index')->name('applynow.index');
+            Route::post('/apply-now/store', 'Dashboard\applynowController@store')->name('applynow.store');
+            Route::get('/apply-now/test', 'Dashboard\applynowController@view')->name('applynow.view');
+            Route::delete('/apply-now/delete/{id}', 'Dashboard\applynowController@destroy')->name('applynow.destroy');
 
 
             /*Careers page*/

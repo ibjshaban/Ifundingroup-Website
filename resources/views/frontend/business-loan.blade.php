@@ -32,11 +32,11 @@
 
                     <div class="row mt-5">
                         <div class="col-sm-12">
-                            <button class="btn btn-xl master-bg"><a href="{{ route('applynow') }}" class="text-white"
+                            <button class="btn btn-xl master-bg"><a href="{{ route('applynow.index') }}" class="text-white"
                                                                     style="font-size: 20px">Get your personalize rate </a>
                             </button>
                             <span class="text-white"> &nbsp;&nbsp;OR</span>
-                            <button class="btn btn-xl bg-none"><u><a href="{{ route('applynow') }}" class="text-white"
+                            <button class="btn btn-xl bg-none"><u><a href="{{ route('applynow.index') }}" class="text-white"
                                                                      style="font-size: 20px">Apply now</a></u></button>
                         </div>
 
@@ -160,7 +160,7 @@
 
             </div>
             <div class="col-sm-6 text-center my-auto">
-                <button class="btn btn-xl border"><a href="{{ route('applynow') }}" class="text-white" style="font-size: 20px">Get
+                <button class="btn btn-xl border"><a href="{{ route('applynow.index') }}" class="text-white" style="font-size: 20px">Get
                         your personalised rate</a></button>
             </div>
         </div>
@@ -204,7 +204,7 @@
                         Once you accept, you’ll have the money in your account in days.</p>
 
                 </div>
-                <button class="btn btn-xl master-bg mb-4"><a href="{{ route('applynow') }}" class="text-white"
+                <button class="btn btn-xl master-bg mb-4"><a href="{{ route('applynow.index') }}" class="text-white"
                                                              style="font-size: 20px">Get your personalize rate </a>
                 </button>
             </div>
@@ -231,7 +231,7 @@
                     and you’ll only pay interest on the time you borrow.<br><br>
                     Our rates start from 1.9% per year - fees apply.
                 </h5>
-                <button class="btn btn-xl master-bg my-4"><a href="{{ route('applynow') }}" class="text-white"
+                <button class="btn btn-xl master-bg my-4"><a href="{{ route('applynow.index') }}" class="text-white"
                                                              style="font-size: 20px">Get your personalize rate </a>
                 </button>
             </div>

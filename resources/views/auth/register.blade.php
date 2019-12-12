@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid bg-light">
         <div class="row py-5">
-            <div class="col-sm-6 offset-sm-3 p-sm-5 justify-content-center bg-white">
+            <div class="col-sm-6 offset-sm-3 p-sm-5 justify-content-center bg-white mt-5">
                 <h1 class="fa-2x master-color p-2">Sign Up</h1>
                 <form class="my-3" method="POST" action="{{ route('register') }}">
                     @csrf
@@ -119,7 +119,7 @@
                                 <label class="form-check-label">Recent</label>
                             </div>
                             <div class="form-check">
-                                <input type="radio" class="form-check-input" name="home_ownership" value="Own" required>
+                                <input type="radio" class="form-check-input" name="home_ownership" value="Own">
                                 <label class="form-check-label">Own</label>
                             </div>
                             <div class="form-check">
@@ -136,7 +136,7 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox"
                                        value="I did not graduate from any collage or school" id=""
-                                       name="check_graduation" required>
+                                       name="check_graduation">
                                 <label class="form-check-label">
                                     I did not graduate from any collage or school
                                 </label>
@@ -144,7 +144,7 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox"
                                        value="I have graduate from collage or school" id=""
-                                       name="check_graduation" required>
+                                       name="check_graduation">
                                 <label class="form-check-label">
                                     I have graduate from collage or school
                                 </label>

@@ -104,7 +104,7 @@
                     helped thousands of businesses in the UK, US, Germany and the Netherlands to take their next step
                     forward.<br><br>
 
-                    <button class="btn btn-xl bg-none"><u><a href="{{ route('applynow') }}" class="text-dark"
+                    <button class="btn btn-xl bg-none"><u><a href="{{ route('applynow.index') }}" class="text-dark"
                                                              style="font-size: 20px">Open A Classic Account</a></u>
                     </button>
 

@@ -10,7 +10,7 @@
 <!--custom link-->
 <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/style/style.css') }}">
 <body>
-<nav class="navbar navbar-expand-lg navbar-light position-absolute w-100 mt-sm-5 mt-5">
+<nav class="navbar navbar-expand-lg navbar-light position-absolute w-100 mt-sm-5 mt-5" style="z-index: 1">
     <div class="container mt-sm-1 mt-4" id="nav-con">
         <a class="navbar-brand" href="{{ route('home') }}"><img class="logo" src="{{ asset('frontend-assets/images/logo.jpg') }}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"

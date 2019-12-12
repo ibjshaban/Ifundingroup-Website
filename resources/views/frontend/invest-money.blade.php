@@ -25,20 +25,20 @@
                 background-position:center;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
-                <div class="col-12 pt-5">
-                    <h1 class="font-weight-bold text-white display-sm-3">Earn a projected <br>return of
+                <div class="col-12 mt-5">
+                    <h1 class="font-weight-bold text-white display-sm-3 mt-5">Earn a projected <br>return of
                         4.5 - 6.5% <br>per year</h1>
                     <h3 class="text-white font-weight-bold pt-4"> Join thousands of investors earning for their future
                         by lending to businesses through Ifundingroup.</h3>
 
                     <div class="row mt-5">
                         <div class="col-xs-12 col-sm-6 col-md-5">
-                            <button class="btn btn-xl master-bg"><a href="{{ route('applynow') }}" class="text-white"
+                            <button class="btn btn-xl master-bg"><a href="{{ route('applynow.index') }}" class="text-white"
                                                                     style="font-size: 20px">Open an ISA account</a>
                             </button>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-7 pl-sm-0 pl-3 mt-sm-0 mt-4">
-                            <button class="btn btn-xl master-bg"><a href="{{ route('applynow') }}" class="text-white"
+                            <button class="btn btn-xl master-bg"><a href="{{ route('applynow.index') }}" class="text-white"
                                                                     style="font-size: 20px">Open an Classic account</a>
                             </button>
                         </div>
@@ -184,7 +184,7 @@
                 <img src="{{ asset('frontend-assets/images/telegraph_logo.svg') }}">
             </div>
             <div class="col-md-8">
-                <p class="lead fa-2x">"<b>Ifundingroup has been the most lucrative</b> [peer-to-peer platform]. Since I
+                <p class="lead fa-2x font-weight-bold">"<b>Ifundingroup has been the most lucrative</b> [peer-to-peer platform]. Since I
                     joined in August 2012, drip feeding cash in, my returns, after all fees and bad debt adjustment,
                     have been 6.2pc"</p>
                 <p class="text-left text-dark">-Martin Lewis, writing in The Daily Telegraph, 2013</p>
@@ -267,7 +267,7 @@
             <table class="text-justify">
                 <tr>
                     <td class="align-text-top">1.</td>
-                    <td class="pl-0 pl-sm-3"><h5 class="font-weight-light mb-4">The rates shown are the annual projected
+                    <td class="pl-0 pl-sm-3"><h5 class="font-weight-light mb-4 text-center">The rates shown are the annual projected
                             returns, after fees and bad debts but before tax, that a diversified investor could earn
                             with either lending option. Your actual return may be higher or lower than projected, for
                             example due to the performance of the individual loans your funds are matched with, or a
@@ -276,7 +276,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="align-text-top">2.</td>
+                    <td class="align-text-top text-center">2.</td>
                     <td class="pl-0 pl-sm-3"><h5 class="font-weight-light mb-4">Interest earned is after fees and bad
                             debt, but before tax.</h5></td>
                 </tr>
@@ -428,11 +428,11 @@
                 <h3 class="text-center">Open your account and start lending to hundreds of businesses today.</h3>
                 <div class="row my-4">
                     <div class="col-sm-6 text-sm-right text-center">
-                        <button class="btn btn-xl master-bg"><a href="{{ route('applynow') }}" class="text-white"
+                        <button class="btn btn-xl master-bg"><a href="{{ route('applynow.index') }}" class="text-white"
                                                                 style="font-size: 20px">Open an ISA account</a></button>
                     </div>
                     <div class="col-sm-6 text-sm-left text-center">
-                        <button class="btn btn-xl master-bg"><a href="{{ route('applynow') }}" class="text-white"
+                        <button class="btn btn-xl master-bg"><a href="{{ route('applynow.index') }}" class="text-white"
                                                                 style="font-size: 20px">Open an ISA account</a></button>
                         </button>
                     </div>
@@ -452,7 +452,7 @@
                 <h5 class="font-weight-light"> Lent to UK businesses</h5>
             </div>
             <div class="col-sm-3 text-sm-right text-center my-auto">
-                <button class="btn btn-xl master-bg"><a href="{{ route('applynow') }}" class="text-white"
+                <button class="btn btn-xl master-bg"><a href="{{ route('applynow.index') }}" class="text-white"
                                                         style="font-size: 20px">Open an ISA account</a></button>
             </div>
             <div class="col-sm-3 text-sm-left text-center my-auto">

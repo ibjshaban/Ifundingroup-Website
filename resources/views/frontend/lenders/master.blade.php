@@ -43,7 +43,7 @@
 
                 <div class="navtitl"><a href="{{ route('lenders.becomeLend') }}">Who can become a Lender?</a></div>
 
-                <div class="navtitl table-success"><a href="{{ route('howToWork.bidProcess') }}">Who am I Lending to?</a></div>
+                <div class="navtitl table-success"><a href="{{ route('lenders.lendToBe') }}">Who am I Lending to?</a></div>
 
                 <div class="navtitl"><a href="{{ route('lenders.returnFees') }}">Returns and Fees</a>
                 </div>

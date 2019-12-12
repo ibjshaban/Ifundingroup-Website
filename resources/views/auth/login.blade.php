@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid bg-light">
         <div class="row py-5">
-            <div class="col-sm-6 offset-sm-3 p-sm-5 justify-content-center bg-white">
+            <div class="col-sm-6 offset-sm-3 p-sm-5 justify-content-center bg-white mt-5">
                 <h1 class="fa-2x master-color p-2">Sign in to your account</h1>
                 <form class="my-3" method="POST" action="{{ route('login') }}">
                     @csrf

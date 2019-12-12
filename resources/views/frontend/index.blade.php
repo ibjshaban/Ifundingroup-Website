@@ -35,7 +35,7 @@
                         <span class="text-white"> OR </span>
                     </div>
                     <div class="col-sm-5 text-sm-left text-center pl-sm-5 pl-3">
-                        <button class="btn btn-xl master-bg"><a href="{{ route('applynow') }}" class="text-white"
+                        <button class="btn btn-xl master-bg"><a href="{{ route('applynow.index') }}" class="text-white"
                                                                 style="font-size: 20px">Apply now</a></button>
                     </div>
 
@@ -83,7 +83,7 @@
                 </h2>
                 <div class="row align-items-center mt-5">
                     <div class="col-sm-5 text-sm-right text-center">
-                        <button class="btn btn-xl master-bg px-5 font-weight-bold"><a href="subpages/{{ route('applynow') }}"
+                        <button class="btn btn-xl master-bg px-5 font-weight-bold"><a href="{{ route('applynow.index') }}"
                                                                                       class="text-white"
                                                                                       style="font-size: 25px">Get
                                 started</a></button>
@@ -92,7 +92,7 @@
                         <h5 class="font-weight-light"> OR </h5>
                     </div>
                     <div class="col-sm-5 text-sm-left text-center pl-sm-5">
-                        <button class="btn btn-xl master-bg px-5 font-weight-bold"><a href="subpages/{{ route('businessloan') }}"
+                        <button class="btn btn-xl master-bg px-5 font-weight-bold"><a href="{{ route('businessloan') }}"
                                                                                       class="text-white"
                                                                                       style="font-size: 25px">Learn
                                 more</a></button>
@@ -329,7 +329,7 @@
                 <h2 class="font-weight-light text-center mb-3">Become an investor</h2>
                 <h5 class="font-weight-light mt-5">If you want to earn great returns by lending to British businesses,
                     open an account today.</h5>
-                <button class="btn btn-xl border my-3"><a href="subpages/invest_your_money.html" class="text-white"
+                <button class="btn btn-xl border my-3"><a href="{{ route("investMoney") }}" class="text-white"
                                                           style="font-size: 20px">Learn about investing</a></button>
                 <h5 class="font-weight-light">Remember, when lending to businesses your capital is at risk.</h5>
 
@@ -405,7 +405,7 @@
                 <h4 class="font-weight-light">We only do business lending, and have tailored our award-winning service
                     to give you the best experience possible.<br><br>
                 </h4>
-                <button class="btn btn-xl border my-4 mb-5"><a href="subpages/{{ route('businessloan') }}" class="text-white"
+                <button class="btn btn-xl border my-4 mb-5"><a href="{{ route('businessloan') }}" class="text-white"
                                                                style="font-size: 20px">Learn more about business
                         loan</a></button>
                 <div class="row">
