@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\applynow;
+use App\ApplyNow;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +18,7 @@ class ApplyNowController extends Controller
 
     public function store(Request $request)
     {
-        applynow::create($request->all());
+        ApplyNow::create($request->all());
 
         return redirect()->back()->with('success', 'The request has been sent');
     }
@@ -27,14 +27,14 @@ class ApplyNowController extends Controller
     {
         $user = Auth::user();
 
-        $requests = applynow::all();
+        $requests = ApplyNow::all();
 
         return view('dashboard.apply-now', compact('user', 'requests'));
     }
 
     public function destroy($id)
     {
-        applynow::find($id)->delete();
+        ApplyNow::find($id)->delete();
 
         return back()->with('success', 'The request has been deleted');
     }

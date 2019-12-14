@@ -81,9 +81,9 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
             /*Apply now page*/
             Route::get('/apply-now', 'Dashboard\ApplyNowController@index')->name('applynow.index');
-            Route::post('/apply-now/store', 'Dashboard\applynowController@store')->name('applynow.store');
-            Route::get('/apply-now/test', 'Dashboard\applynowController@view')->name('applynow.view');
-            Route::delete('/apply-now/delete/{id}', 'Dashboard\applynowController@destroy')->name('applynow.destroy');
+            Route::post('/apply-now/store', 'Dashboard\ApplyNowController@store')->name('applynow.store');
+            Route::get('/apply-now/test', 'Dashboard\ApplyNowController@view')->name('applynow.view');
+            Route::delete('/apply-now/delete/{id}', 'Dashboard\ApplyNowController@destroy')->name('applynow.destroy');
 
 
             /*Careers page*/
