@@ -4,15 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    @yield('link')
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+@yield('link')
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 </head>
 <!--custom link-->
 <link rel="stylesheet" type="text/css" href="{{ asset('frontend-assets/style/style.css') }}">
 <body>
 <nav class="navbar navbar-expand-lg navbar-light position-absolute w-100 mt-sm-5 mt-5" style="z-index: 1">
     <div class="container mt-sm-1 mt-4" id="nav-con">
-        <a class="navbar-brand" href="{{ route('home') }}"><img class="logo" src="{{ asset('frontend-assets/images/logo.jpg') }}"></a>
+        <a class="navbar-brand" href="{{ route('home') }}"><img class="logo"
+                                                                src="{{ asset('frontend-assets/images/logo.jpg') }}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
                 style="border-color:white">
@@ -40,7 +41,7 @@
                     <a class="nav-link" href="{{ route('contactus') }}">Contact us</a>
                 </li>
                 <li class="nav-item d-block d-sm-none">
-                    <a class="nav-link" href="{{ route('howToWork.index') }}">How it works</a>
+                                        <a class="nav-link" href="{{ route('howToWork.index') }}">How it works</a>
                 </li>
                 <li class="nav-item d-block d-sm-none">
                     <a class="nav-link" href="{{ route('lenders.lenders') }}">Lenders</a>

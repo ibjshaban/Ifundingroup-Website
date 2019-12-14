@@ -80,7 +80,7 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
 
             /*Apply now page*/
-            Route::get('/apply-now', 'Dashboard\applynowController@index')->name('applynow.index');
+            Route::get('/apply-now', 'Dashboard\ApplyNowController@index')->name('applynow.index');
             Route::post('/apply-now/store', 'Dashboard\applynowController@store')->name('applynow.store');
             Route::get('/apply-now/test', 'Dashboard\applynowController@view')->name('applynow.view');
             Route::delete('/apply-now/delete/{id}', 'Dashboard\applynowController@destroy')->name('applynow.destroy');

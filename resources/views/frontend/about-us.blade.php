@@ -7,8 +7,9 @@
 
 @section('login')
     @if(!$user)
-        <li class="nav-item mt-2 ml-5">
-            <a class="btn btn-secondary" href="{{ route('login') }}">Login</a>
+        <li class="nav-item mt-3 ml-3 pb-3">
+            <a class="badge badge-dark" href="{{ route('login') }}">Login</a>
+            <a class="badge badge-dark ml-1" href="{{ route('register') }}">Sign up</a>
         </li>
     @else
         <li class="nav-item mt-2 ml-5">
@@ -155,34 +156,34 @@
         </div>
         <div class="row p-4">
             <div class="col-sm-3 text-center">
-                <img src="{{ asset('frontend-assets/images/user.png') }}">
-                <p><b>Samir Desai CBE</b><br>
-                    Founder, Chief Executive Officer</p>
+                <img width="90" src="{{ asset('frontend-assets/images/man-1209494_1920.jpg') }}">
+                <p><b>Mike Stuart</b><br>
+                    Chief Executive Officer</p>
             </div>
             <div class="col-sm-3 text-center">
-                <img src="{{ asset('frontend-assets/images/user.png') }}">
-                <p><b>Samir Desai CBE</b><br>
-                    Founder, Chief Executive Officer</p>
+                <img width="50" src="{{ asset('frontend-assets/images/man-537136_1920.jpg') }}">
+                <p><b>Gordon  Ettling</b><br>
+                    Chief Financial Officer</p>
             </div>
             <div class="col-sm-3 text-center">
-                <img src="{{ asset('frontend-assets/images/user.png') }}">
-                <p><b>Samir Desai CBE</b><br>
-                    Founder, Chief Executive Officer</p>
+                <img width="50" src="{{ asset('frontend-assets/images/women-3678419_1920.jpg') }}">
+                <p><b>Lisa Bruins</b><br>
+                    General Counsel</p>
             </div>
             <div class="col-sm-3 text-center">
-                <img src="{{ asset('frontend-assets/images/user.png') }}">
-                <p><b>Samir Desai CBE</b><br>
-                    Founder, Chief Executive Officer</p>
+                <img width="50" src="{{ asset('frontend-assets/images/asian-1652023_1920.jpg') }}">
+                <p><b>Tom  Brockhoff</b><br>
+                    Chief Technology Officer</p>
             </div>
         </div>
 
-        <div class="col my-5">
+      {{--  <div class="col my-5">
             <h1 class="font-weight-bold master-color fa-2x my-4 text-center">The team</h1>
         </div>
         <div class="row p-4">
             <div class="col-sm-3 text-center">
                 <img src="{{ asset('frontend-assets/images/user.png') }}">
-                <p><b>Samir Desai CBE</b><br>
+                <p><b>Beata Wright</b><br>
                     Founder, Chief Executive Officer</p>
             </div>
             <div class="col-sm-3 text-center">
@@ -201,7 +202,7 @@
                     Founder, Chief Executive Officer</p>
             </div>
         </div>
-
+--}}
     </div>
 
     <div class="container-fluid bg-light">
@@ -216,7 +217,7 @@
                 <h3>How it works</h3>
                 <h4 class="font-weight-light">FLearn more about how our loans are funded directly by a range of
                     investors.</h4>
-                <a href="#!" class="text-dark font-weight-bold"><u>See how it works</u></a>
+                <a href="{{ route('howToWork.index') }}" class="text-dark font-weight-bold"><u>See how it works</u></a>
             </div>
             <div class="col-sm-4">
                 <h3>Small business, big impact</h3>

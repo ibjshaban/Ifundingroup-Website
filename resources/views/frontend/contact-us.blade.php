@@ -7,8 +7,9 @@
 
 @section('login')
     @if(!$user)
-        <li class="nav-item mt-2 ml-5">
-            <a class="btn btn-secondary" href="{{ route('login') }}">Login</a>
+        <li class="nav-item mt-3 ml-3 pb-3">
+            <a class="badge badge-dark" href="{{ route('login') }}">Login</a>
+            <a class="badge badge-dark ml-1" href="{{ route('register') }}">Sign up</a>
         </li>
     @else
         <li class="nav-item mt-2 ml-5">
@@ -91,7 +92,9 @@
                 <hr>
                 <form method="post" action="{{ route('contactus.store') }}" enctype="multipart/form-data">
                     @csrf
+                    @if($user)
                     <input type="hidden" name="name" value="{{ $user->name }}">
+                    @endif
                     <div class="form-group">
                         <label for="usr">your email address <sup class="text-danger">*</sup></label>
                         <input type="email" class="form-control" id="usr" name="email" required>

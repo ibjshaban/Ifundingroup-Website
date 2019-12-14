@@ -12,8 +12,9 @@
 
 @section('login')
     @if(!$user)
-        <li class="nav-item mt-2 ml-5">
-            <a class="btn btn-secondary" href="{{ route('login') }}">Login</a>
+        <li class="nav-item mt-3 ml-3 pb-3">
+            <a class="badge badge-dark" href="{{ route('login') }}">Login</a>
+            <a class="badge badge-dark ml-1" href="{{ route('register') }}">Sign up</a>
         </li>
     @else
         <li class="nav-item mt-2 ml-5">
