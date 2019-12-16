@@ -1,5 +1,9 @@
 @extends('dashboard.layout.master')
 
+@section('username')
+    {{ $user->name }}
+@endsection
+
 @section('pageTitle','Add new user')
 
 @section('content')

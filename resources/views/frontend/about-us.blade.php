@@ -13,7 +13,7 @@
         </li>
     @else
         <li class="nav-item mt-2 ml-5">
-            <a class="btn btn-secondary" href="{{ route('user.show',$user->id) }}">Profile</a>
+            <a class="btn btn-secondary" href="{{ route('dashboard') }}">Dashboard</a>
         </li>
     @endif
 @endsection
@@ -29,7 +29,8 @@
                 <div class="col-12 pt-5">
                     <h1 class="font-weight-bold text-white display-sm-3 display-4 pt-5">A BETTER FINANCIAL WORLD</h1>
                     <hr class="master-bg w-25" style="height:5px;" align="left">
-                    <h3 class="text-white font-weight-bold pt-4"> We ignite opportunities for businesses and investors by
+                    <h3 class="text-white font-weight-bold pt-4"> We ignite opportunities for businesses and investors
+                        by
                         providing a better deal for everyone.</h3>
                 </div>
             </div>
@@ -162,7 +163,7 @@
             </div>
             <div class="col-sm-3 text-center">
                 <img width="50" src="{{ asset('frontend-assets/images/man-537136_1920.jpg') }}">
-                <p><b>Gordon  Ettling</b><br>
+                <p><b>Gordon Ettling</b><br>
                     Chief Financial Officer</p>
             </div>
             <div class="col-sm-3 text-center">
@@ -172,37 +173,37 @@
             </div>
             <div class="col-sm-3 text-center">
                 <img width="50" src="{{ asset('frontend-assets/images/asian-1652023_1920.jpg') }}">
-                <p><b>Tom  Brockhoff</b><br>
+                <p><b>Tom Brockhoff</b><br>
                     Chief Technology Officer</p>
             </div>
         </div>
 
-      {{--  <div class="col my-5">
-            <h1 class="font-weight-bold master-color fa-2x my-4 text-center">The team</h1>
-        </div>
-        <div class="row p-4">
-            <div class="col-sm-3 text-center">
-                <img src="{{ asset('frontend-assets/images/user.png') }}">
-                <p><b>Beata Wright</b><br>
-                    Founder, Chief Executive Officer</p>
-            </div>
-            <div class="col-sm-3 text-center">
-                <img src="{{ asset('frontend-assets/images/user.png') }}">
-                <p><b>Samir Desai CBE</b><br>
-                    Founder, Chief Executive Officer</p>
-            </div>
-            <div class="col-sm-3 text-center">
-                <img src="{{ asset('frontend-assets/images/user.png') }}">
-                <p><b>Samir Desai CBE</b><br>
-                    Founder, Chief Executive Officer</p>
-            </div>
-            <div class="col-sm-3 text-center">
-                <img src="{{ asset('frontend-assets/images/user.png') }}">
-                <p><b>Samir Desai CBE</b><br>
-                    Founder, Chief Executive Officer</p>
-            </div>
-        </div>
---}}
+        {{--  <div class="col my-5">
+              <h1 class="font-weight-bold master-color fa-2x my-4 text-center">The team</h1>
+          </div>
+          <div class="row p-4">
+              <div class="col-sm-3 text-center">
+                  <img src="{{ asset('frontend-assets/images/user.png') }}">
+                  <p><b>Beata Wright</b><br>
+                      Founder, Chief Executive Officer</p>
+              </div>
+              <div class="col-sm-3 text-center">
+                  <img src="{{ asset('frontend-assets/images/user.png') }}">
+                  <p><b>Samir Desai CBE</b><br>
+                      Founder, Chief Executive Officer</p>
+              </div>
+              <div class="col-sm-3 text-center">
+                  <img src="{{ asset('frontend-assets/images/user.png') }}">
+                  <p><b>Samir Desai CBE</b><br>
+                      Founder, Chief Executive Officer</p>
+              </div>
+              <div class="col-sm-3 text-center">
+                  <img src="{{ asset('frontend-assets/images/user.png') }}">
+                  <p><b>Samir Desai CBE</b><br>
+                      Founder, Chief Executive Officer</p>
+              </div>
+          </div>
+  --}}
     </div>
 
     <div class="container-fluid bg-light">

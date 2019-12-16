@@ -1,7 +1,7 @@
 <div class="main-sidebar">
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-      <a href="{{ route('dashboard') }}">Ifundgroup</a>
+      <a href="{{ route('dashboard') }}">Ifundgroup Dashboard</a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
       <a href="{{ route('dashboard') }}">St</a>
@@ -19,20 +19,32 @@
         </ul>
       </li>--}}
       <li class="menu-header">System</li>
+
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link has-dropdown"><i class="fas fa-columns"></i><span>Dashboard</span></a>
+            <ul class="dropdown-menu" style="display: block">
+                <li><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-home"></i>Home</a></li>
+                <li><a class="nav-link" href="{{ route('user.edit', $user->id) }}"><i class="fas fa-user-cog"></i>Settings</a></li>
+            </ul>
+        </li>
+
+        @if($user->role=='admin')
+
       <li class="nav-item dropdown">
-        <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>App Settings</span></a>
-        <ul class="dropdown-menu">
-          <li><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-          <li><a class="nav-link" href="{{ route('user.index') }}">Users</a></li>
-          <li><a class="nav-link" href="{{ route('homepage') }}">Home page</a></li>
-          <li><a class="nav-link" href="{{ route('contactus.view') }}">Contact us</a></li>
-          <li><a class="nav-link" href="{{ route('applynow.view') }}">Apply now</a></li>
-          <li><a class="nav-link" href="{{ route('careers.index') }}">Careers</a></li>
+        <a href="{{ route('dashboard') }}" class="nav-link has-dropdown"><i class="fas fa-cogs"></i><span>App setting</span></a>
+        <ul class="dropdown-menu" style="display: block">
+          <li><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-home"></i>Home</a></li>
+          <li><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-file"></i>Users</a></li>
+          <li><a class="nav-link" href="{{ route('homepage') }}"><i class="fas fa-file"></i>Home page</a></li>
+          <li><a class="nav-link" href="{{ route('contactus.view') }}"><i class="fas fa-file"></i>Contact us</a></li>
+          <li><a class="nav-link" href="{{ route('applynow.view') }}"><i class="fas fa-file"></i>Apply now</a></li>
+          <li><a class="nav-link" href="{{ route('careers.index') }}"><i class="fas fa-file"></i>Careers</a></li>
           {{--<li><a class="nav-link" href="{{ route('category.index') }}">Categories</a></li>
           <li><a class="nav-link"href="{{ route('tag.index') }}">Tags</a></li>--}}
-          <li><a class="nav-link" href="#">Settings</a></li>
+          <li><a class="nav-link" href="{{ route('user.edit', $user->id) }}"><i class="fas fa-user-cog"></i>Settings</a></li>
         </ul>
       </li>
+        @endif
     </ul>
 
     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

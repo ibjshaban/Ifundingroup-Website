@@ -12,7 +12,7 @@
         </li>
     @else
         <li class="nav-item mt-2 ml-5">
-            <a class="btn btn-secondary" href="{{ route('user.show',$user->id) }}">Profile</a>
+            <a class="btn btn-secondary" href="{{ route('dashboard') }}">Dashboard</a>
         </li>
     @endif
 @endsection

@@ -111,19 +111,23 @@
                 </li>
                 <li class="dropdown"><a href="#" data-toggle="dropdown"
                                         class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                        <img alt="image" src="{{ asset('dashboard-assets/img/avatar/avatar-1.png') }}"
+                        <img alt="image" src="{{ is_null($user->avatar)?url('dashboard-assets/img/avatar/avatar-1.png'):url('storage/'.$user->avatar) }}"
                              class="rounded-circle mr-1">
                         <div class="d-sm-none d-lg-inline-block">Hi, @yield('username')</div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <div class="dropdown-title">Logged in 5 min ago</div>
+
+                        <a href="{{ route('dashboard') }}" class="dropdown-item has-icon">
+                            <i class="fas fa-columns"></i> Dashboard
+                        </a>
+
                         <a href="{{ route('user.show', $user->id) }}" class="dropdown-item has-icon">
                             <i class="far fa-user"></i> Profile
                         </a>
                         {{-- <a href="features-activities.html" class="dropdown-item has-icon">
                              <i class="fas fa-bolt"></i> Activities
                          </a>--}}
-                        <a href="{{ route('user.update', $user->id) }}" class="dropdown-item has-icon">
+                        <a href="{{ route('user.edit', $user->id) }}" class="dropdown-item has-icon">
                             <i class="fas fa-cog"></i> Settings
                         </a>
                         <div class="dropdown-divider"></div>
@@ -134,9 +138,8 @@
                 </li>
             </ul>
         </nav>
-    @if($user->role=='admin')
-        @include('dashboard.layout.sidebar')
-    @endif
+
+    @include('dashboard.layout.sidebar')
 
     <!-- Main Content -->
         <div class="main-content">
