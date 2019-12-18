@@ -226,8 +226,8 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
-        <a href="{{ route('home') }}"> Ifundingroup.net</a> | Design & developed by :
-        <a href="#"> Alok</a>
+        <a href="{{ route('home') }}"> Ifundingroup.com</a> | Design & developed by :
+        <a href="https://www.facebook.com/ibrahim.shaban1696"> Ibrahim</a>
     </div>
     <!-- Copyright -->
 

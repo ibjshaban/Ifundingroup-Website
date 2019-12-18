@@ -57,6 +57,10 @@ Route::get('/contact-us', 'Dashboard\ContactUsController@index')->name('contactu
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
     Route::get('/', 'Dashboard\DashboardController@index')->name('dashboard');
+    Route::get('/earning-history', 'Dashboard\DashboardController@earningHistory')->name('earningHistory');
+    Route::get('/lend-now', 'Dashboard\DashboardController@lendNow')->name('lendNow');
+    Route::get('/borrower-now', 'Dashboard\DashboardController@borrowerNow')->name('borrowerNow');
+    Route::get('/withdrawal', 'Dashboard\DashboardController@withdrawal')->name('withdrawal');
 
     Route::resource('/user', 'Dashboard\UserController');
 
